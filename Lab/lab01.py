@@ -14,7 +14,6 @@ print(box.split('a', 2))
 # but this is not working
 
 # Current solution
-
 '''
 tempString = box
 tempString = tempString.split('a')
@@ -25,8 +24,20 @@ tempString = tempString.split('u')
 tempString = tempString.split('y')
 print(tempString)
 '''
+
+# Current solution
+print(box.replace('a', '').replace('e', '').replace('i', '').replace('o', '').replace('u', '').replace('y', ''))
+
 # To the operation is created other function
 # .strip('chars')
 
 # Correct solution
 print(box.strip('aeiouy'))
+
+# Testing zone
+print('\nTesting zone\n')
+ttObject = "yale najdakyo dad eiu"
+print('Strip function:', ttObject.strip('aeiouy'))
+print('Replace function:', ttObject.replace('a', '').replace('e', '').replace('i', '').replace('o', '').replace('u', '').replace('y', ''))
+print('\nEnd Testing zone\n')
+# End Testing zone

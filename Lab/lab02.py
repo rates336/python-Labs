@@ -5,7 +5,7 @@ radius = 5
 fieldOfCircle = (radius.__pow__(2) * PI).__round__(2)
 circuitOfCircle = (radius * 2 * PI).__round__(2)
 diameterOfCircle = (radius * 2)
-print('Circuit which radius =', radius, 'have:')
+print('Circle which radius =', radius, 'have:')
 print('Field:', fieldOfCircle, '\nCircuit:', circuitOfCircle, '\nDiameter:', diameterOfCircle)
 
 # Function round
@@ -31,10 +31,25 @@ Traceback (most recent call last):
 TypeError: type complex doesn't define __round__ method
 '''
 
-print('\nCircuit which sites =', rectangleSiteA, 'and', rectangleSiteB, 'have:')
+print('\nRectangle which sites =', rectangleSiteA, 'and', rectangleSiteB, 'have:')
 print('Field:', fieldOfRectangle, '\nCircuit:', circuitOfRectangle, '\nDiameter:', diagonalOfRectangle)
 
 trapezeSiteA = 10.2
 trapezeSiteB = 8.2
 trapezeArm = 2.45
 trapezeArm2 = trapezeArm
+
+# Future task 03
+# add variables true and false
+# trapezeArmsEquals = true / false
+# and later if true use correct pattern
+
+# Current solution
+
+circuitOfTrapeze = (trapezeSiteA + trapezeSiteB + trapezeArm + trapezeArm2).__round__(2)
+fieldOfTrapeze = cmath.sqrt(((trapezeSiteA - trapezeSiteB) / 2).__pow__(2) + trapezeArm.__pow__(2)) * ((trapezeSiteA - trapezeSiteB) / 2 + trapezeSiteB)
+# diagonalOfTrapeze = [Place for solution]
+# diagonalOfTrapeze 2 = diagonalOfTrapeze
+
+print('\nTrapeze which sites =', trapezeSiteA, 'and', trapezeSiteB, 'and', trapezeArm, 'have:')
+print('Field:', fieldOfTrapeze, '\nCircuit:', circuitOfTrapeze)#, '\nDiameter:', diagonalOfRectangle)
