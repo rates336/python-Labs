@@ -5,7 +5,7 @@ print(box)
 box = box.lower()
 print(box)
 print(box.split('a', 2))
-# Task for future 01
+# Future task 01
 # Find how to use split and how to delete from string a few letters which are not next letter
 # Example
 # box = "cola:9 bottles: 1 litr"
