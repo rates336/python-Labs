@@ -30,4 +30,3 @@ print(tempString)
 
 # Correct solution
 print(box.strip('aeiouy'))
-# print(box)
