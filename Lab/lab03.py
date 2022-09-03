@@ -133,3 +133,55 @@ testStr = '100'
 print(type(int(testStr)))
 print('\nEnd Testing zone\n')
 # End Testing zone
+
+
+article = '''This article is about the comedy group. For their TV show frequently called Monty Python, see Monty Python\'s Flying Circus.
+"Pythonesque" redirects here. For the play by Roy Smiles, see Pythonesque (play).
+"The Pythons" redirects here. For the documentary film about the group, see The Pythons (film).'''
+
+print(article.upper())
+print(article.lower().replace('monty', 'flying'))
+print(article.split(' '))
+print(article.lower().find('python'))
+print(r'to print the \ you need to put \ twice in your text like this: \\')
+print('or method which I used upper ;)')
+print('The best hits of \'80s!!!')
+print("The best hits of \'80s!!!")
+print("The best hits of '80s!!!")
+
+# Task !04
+'''
+9. Teraz zrobisz "mini kalkulator" do kantoru wymiany walut. Chcemy wyświetlić tabelkę w postaci:
+cur   exchange amount
+USD   3.65     64.10958904109589
+EUR   4.23     55.31914893617021
+w tym celu:
+-najpierw zadeklaruj zmienną amountPLN i wpisz do niej wartość 234
+-następnie wyświetl teksty rozdzielając wartości tabulatorem, tak aby to co zostanie wypisane na ekranie przypominało tabelkę 
+(skorzystaj do tego z kilku poleceń print, jednolinijkowy print byłby zbyt trudny do zrozumienia)
+-wartości w kolumnie amount wylicz dzieląc amountPLN przez aktualny kurs USD i EUR (w tym przykładzie są to 3.65 i 4.23)
+'''
+# Future task 03
+# Connect to web and track price exchange and show currently here
+# USD xx.yy = xx.yy PLN
+# EUR xx.yy = xx.yy PLN
+# GBP xx.yy = xx.yy PLN
+# EUR xx.yy = xx.yy USD
+# EUR xx.yy = xx.yy GBP
+# USD xx.yy = xx.yy GBP
+
+amountPLN = 234
+priceExchangePLNtoUSD = 3.65
+priceExchangePLNtoEUR = 4.23
+amountOfExchangePLNtoUSD = (amountPLN / priceExchangePLNtoUSD).__round__(2)
+amountOfExchangePLNtoEUR = (amountPLN / priceExchangePLNtoEUR).__round__(2)
+
+priceExchange = 'USD\t' + str(priceExchangePLNtoUSD) + '\t' + str(amountOfExchangePLNtoUSD) + '\nEUR\t' + str(priceExchangePLNtoEUR) + '\t' + str(amountOfExchangePLNtoEUR)
+print('You can change amount ', amountPLN, ' PLN to:\n', priceExchange, sep='')
+
+valueAsText = '123.45'
+factor = 1.23
+print('value is', valueAsText, 'factor is', factor, 'value * factor = ', float(valueAsText) * factor)
+input('enter')
+
+
