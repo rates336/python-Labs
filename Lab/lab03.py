@@ -182,6 +182,6 @@ print('You can change amount ', amountPLN, ' PLN to:\n', priceExchange, sep='')
 valueAsText = '123.45'
 factor = 1.23
 print('value is', valueAsText, 'factor is', factor, 'value * factor = ', float(valueAsText) * factor)
-input('enter')
+
 
 
