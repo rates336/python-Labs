@@ -21,6 +21,7 @@ rectangleSiteB = 4.04
 circuitOfRectangle = ((rectangleSiteA + rectangleSiteB) * 2).__round__(2)
 fieldOfRectangle = (rectangleSiteA * rectangleSiteB).__round__(2)
 diagonalOfRectangle = cmath.sqrt(rectangleSiteB.__pow__(2) + rectangleSiteA.__pow__(2))
+diagonalOfRectangle = diagonalOfRectangle * 100
 # diagonalOfRectangle = round(diagonalOfRectangle, 2)
 # Future task 02
 # find how to change it to can round it
