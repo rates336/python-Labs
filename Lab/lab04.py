@@ -24,6 +24,8 @@ helloMessage2 = '{0:s} has {1:d} {2:s}'
 print(helloMessage2.format('Kate', 100_000, 'USD'))
 print(helloMessage2.format('Chris', 1, 'dog'))
 
+
+# Task !05
 '''
 9. [Trochę trudniejsze, ale cała trudność polega na samodzielnym zbudowaniu napisu formatującego i to w takiej postaci,
 że na każdy element w napisie ma zostać przewidziana określona liczba znaków]
