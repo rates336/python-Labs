@@ -11,8 +11,25 @@
 #     print_hi('PyCharm')
 #
 # # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-# Task 1
-print(23 - 28)
-# Task 2
-print((18 - 0) * 12 * 500, 'PLN', (18 - 2) * 12 * 500, 'PLN', 'difference', (18 - 0) * 12 * 500 - (18 - 2) * 12 * 500, 'PLN')
+
+print('           /^\/^\\')
+print('         _|__|  O|')
+print('\/     /~     \_/ \\')
+print(' \____|__________/ \\')
+print('        \_______     \\')
+print('                `\     \                 \\')
+print('                  |     |                  \\')
+print('                 /      /                    \\')
+print('                /     /                       \\\\')
+print('              /      /                         \ \\')
+print('             /     /                            \  \\')
+print('           /     /             _----_            \   \\')
+print('          /     /           _-~      ~-_         |   |')
+print('         (      (        _-~    _--_    ~-_     _/   |')
+print('          \      ~-____-~    _-~    ~-_    ~-_-~    /')
+print('            ~-_           _-~          ~-_       _-~')
+print('               ~--______-~                ~-___-~')
 print()
+print()
+print()
+input("press enter to finish")
