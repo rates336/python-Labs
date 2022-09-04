@@ -1,4 +1,6 @@
 # Testing zone
+import datetime
+
 print('\nTesting zone\n')
 tmpString = 'Loading {1:s} on operation system {0:s}'
 print(tmpString.format('Windows', 'Bla bla bla file.XD'))
@@ -46,6 +48,36 @@ line = '{0:20s} costs {1:6d}€'
 # Reservation of place for symbols is not equals that "max of symbols", it's number which equalize space format
 # If you enter more next symbols has been moved to correct position
 print(line.format('Bread', 3), '\n', line.format('Villa in Warsaw', 123_000), '\n', line.format('Study', 3_000), sep='')
+print()
 print(line.format('Bread', 3))
 print(line.format('Study', 3_000))
 print(line.format('Villa in Warsaw', 123_000))
+
+# Testing zone
+print('\nTesting zone\n')
+print(float('inf') / 2)
+print('\nEnd Testing zone\n')
+# End Testing zone
+
+name = 'yoursName'
+age = 20
+daysInYear = 365
+currentYear = datetime.date.today().year
+bornYear = currentYear - age
+messageX = '{0:s} is {1:d} years old, so is about {2:d} days old'
+print(messageX.format(name, age, daysInYear * age))
+print('So He/She/It born in:', bornYear)
+messageX = '{0:s} is {1:d} years old, so is about {2:d} days old'
+print(messageX.format('Paulina', 18, 18 * 365))
+x = 1234567890
+y = 12345
+print('x = ', x, ', y = ', y, sep='')
+print('rest of division x through y is:', x % y, 'and result of integer division is:', x // y)
+
+
+
+
+
+
+
+
