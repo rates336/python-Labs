@@ -27,7 +27,7 @@ diagonalOfRectangle = diagonalOfRectangle * 100
 # find how to change it to can round it
 '''
 Traceback (most recent call last):
-  File "C:/Users/Karol/PycharmProjects/firstPythonProject/Lab/lab02.py", line 24, in <module>
+  File "C:/Users/Karol/PycharmProjects/firstPythonProject/Labs/lab02.py", line 24, in <module>
     diagonalOfRectangle = round(diagonalOfRectangle, 2)
 TypeError: type complex doesn't define __round__ method
 '''

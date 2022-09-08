@@ -40,7 +40,7 @@ print(quote.split(' '))
 print(not quote.isdigit(), quote.isdecimal(), quote.isalpha(), quote.replace('-', 'X').replace(' ', '').isalnum())
 
 drive = 'C:\\'
-folder = 'Users\\Karol\\PycharmProjects\\firstPythonProject\\Lab\\'
+folder = 'Users\\Karol\\PycharmProjects\\firstPythonProject\\Labs\\'
 file = 'lab02.py'
 print(drive, folder, file, sep='')
 path = drive + folder + file
