@@ -1,3 +1,5 @@
+import random
+
 numbers = [8, 18, 2, 4, 16, 5, 25, 4, 22, 3, 3, 5, 3, 9, 81, 11]
 
 lengthNumbers = numbers.__len__() - 1
@@ -71,3 +73,92 @@ while temp < operationList.__len__():
     print(operationList[opTemp])
     opTemp += 1
     temp += 1
+
+previousNumber = 0
+number = 1
+
+while previousNumber < 50:
+    print('Sum of 2 next numbers is:', previousNumber + number)
+    # Alternative
+    # print(previousNumber * 2 + 1)
+    # print(number * 2 - 1)
+    number += 1
+    previousNumber = number
+else:
+    print('Done')
+
+
+# Task !17
+'''
+Teraz napiszesz... poniekąd prostą grę. 
+Zasady są proste. Komputer wymyśli sobie liczbę od 0 do 20, a Ty musisz ją zgadnąć!
+
+Polecenia
+import random
+my_number = random.randint(0,20)
+wygenerują liczbę losową i umieszczą jej wartość w zmiennej my_number (więcej o module random w dalszej częśći kursu).
+
+Zadeklaruj zmienną guess i przypisz jej wartość -1 
+(to wartość spoza zakresu losowanych liczb - czyli na pewno nie jest równa wylosowanej liczbie)
+
+Wyświetl instrukcję do gry - przynajmniej słowa "Guess my number!"
+Wykonuj pętlę while tak długo jak wartość w zmiennej guess jest różna od wartości my_number
+poleceniem
+guess = int(input())
+
+wczytaj odpowiedź użytkownika (uwaga program nie jest odporny na wprowadzenie w tym miejscu np. 
+napisu zamiast liczby - o obsłudze błędów opowiadam w ostatnim module kursu)
+
+Sprawdź wartość liczby guess i jeżeli jest równa my_number, to wyświetl gratulacje
+w przeciwnym razie jeśli guess jest większe od my_number wyświetl "
+Sorry- my number is smaller than your guess, Try again!"
+w przeciwnym razie wyświetl  "Sorry- my number is greater than your guess, Try again!"
+
+A teraz pobaw się kilka razy ;)
+'''
+tab = []
+trials = 0
+while tab.__len__() < 50:
+    tab.append(random.randint(0, 19))
+else:
+    print(tab)
+
+my_number = random.randint(0, 19)
+guess = -1
+print('Hi your role is try to guess number which computer selected')
+guessComputer = -1
+while guess != my_number:
+    guess = int(input())
+    if my_number > guess:
+        print('It\'s not this number, number is higher than your type, Try again!')
+    else:
+        print('It\'s not this number, number is lower than your type, Try again!')
+    trials += 1
+else:
+    print('Congratulation, You won, the number is:', guess)
+    print('and your number of trials is:', trials)
+    trials = 0
+
+while guessComputer != my_number and trials < 50:
+    guessComputer = tab[trials]
+    print(guessComputer)
+    trials += 1
+else:
+    print('Computer numbers of trials is:', trials)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
