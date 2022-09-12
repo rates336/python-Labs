@@ -48,23 +48,24 @@ wyświetli informację o kuponie na Burgera, a w przeciwnym razie wyświetli kom
 Zmieniaj wejściowe warunki logiczne i testuj, czy polecenie zwraca oczekiwany napis.
 '''
 
-isPizzaOrdered = True
+isPizzaOrdered = False
 isBigDrinkOrdered = True
 isWeekend = False
 
 if isWeekend:
     print('Today is weekend, go in work week to get coupon for buys which have pizza or big drink')
-elif not isPizzaOrdered and not isBigDrinkOrdered:
+elif not isPizzaOrdered or not isBigDrinkOrdered:
     print('If you will get a coupon need bought pizza or big drink, if you buy twice you will get better offer')
-elif not isPizzaOrdered:
-    print()
-elif not isBigDrinkOrdered:
-    print('You must bought pizza or big drink to get a coupon')
-else:
-    if isPizzaOrdered and isBigDrinkOrdered:
-        print('You will get coupon for set with a selected burger.')
+    if isPizzaOrdered:
+        print('If you bought big drink yet you will give a better coupon')
+        print('Currently you will give coupon for burger /1')
+    elif isBigDrinkOrdered:
+        print('If you bought pizza yet you will give a better coupon')
+        print('Currently you will give coupon for burger /2')
     else:
-        print('You will get coupon for a burger.')
+        print('You must bought pizza or big drink to get a coupon')
+else:
+    print('You will get coupon for set with a selected burger.')
 
 # Alternative
 # if (isPizzaOrdered or isBigDrinkOrdered) and not isWeekend:
