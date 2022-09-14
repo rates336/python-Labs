@@ -187,7 +187,6 @@ such as C/C++. It turns out that Python can successfully interact with these oth
 some languages can’t.'
 
 dictWords = {}
-tmpNumber = 0
 for tmpStr in text.split(' '):
     tmpStr = tmpStr.strip(',./;\'[]-=`\\|<>?:"{}_~!@#$%^&*()123456789\n\t\r').lower()
     if tmpStr.__len__() > 0:
