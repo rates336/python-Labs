@@ -1,3 +1,5 @@
+import datetime
+import random
 import time
 import calendar
 import math
@@ -70,4 +72,20 @@ print(math.floor(min(minValues)))
 print(math.ceil(max(maxValues)))
 print(inputData[-1])
 
+minValues2 = []
+maxValues2 = []
+for element in inputData:
+    minValues2.append(element - random.random() * element)
+    maxValues2.append(element + random.random() * element)
+else:
+    print(min(minValues2), max(maxValues2), max(maxValues2) - min(minValues2), sep='\n')
 
+
+dt = datetime.datetime
+print(dt.today())
+
+
+today = dt.strptime(str(dt.today().year)[2:] + '-' + str(dt.today().month) + '-' + str(dt.today().day), '%y-%m-%d')
+print(today)
+print(str(today).replace('00:00:00', ''))
+print(datetime.date.today().strftime('%Y-%m-%d'))
