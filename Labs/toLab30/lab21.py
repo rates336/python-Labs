@@ -36,6 +36,7 @@ więc w razie czego pamiętaj, że wykonanie skryptu możesz przerwać naciskaj�
 Jedno z uruchomień, które wreszcie się skończyło u mnie wyglądało tak:
 '''
 
+
 import random
 
 styles = ['Heart', 'Diamond', 'Club', 'Spade']
