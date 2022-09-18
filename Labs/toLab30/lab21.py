@@ -35,6 +35,7 @@ Możesz dodatkowo wyświetlać ilość kart u gracza 1 i 2 lub np. tyle gwiazdek
 więc w razie czego pamiętaj, że wykonanie skryptu możesz przerwać naciskając CTRL+C
 Jedno z uruchomień, które wreszcie się skończyło u mnie wyglądało tak:
 '''
+
 import random
 
 styles = ['Heart', 'Diamond', 'Club', 'Spade']
