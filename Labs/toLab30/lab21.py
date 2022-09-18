@@ -134,11 +134,55 @@ while playersDecks.get(listOfPlayers[0]).__len__() > 0 and playersDecks.get(list
     print('Players have the same power on card')
     print(listOfPlayers[0], 'card:', playersDecks.get(listOfPlayers[0])[0], 'vs:',
           listOfPlayers[1], 'card:', playersDecks.get(listOfPlayers[1])[0])
-    playersDecks.get(listOfPlayers[0]).append(playersDecks.get(listOfPlayers[0])[0])
-    playersDecks.get(listOfPlayers[0]).remove(playersDecks.get(listOfPlayers[0])[0])
-    playersDecks.get(listOfPlayers[1]).append(playersDecks.get(listOfPlayers[1])[0])
-    playersDecks.get(listOfPlayers[1]).remove(playersDecks.get(listOfPlayers[1])[0])
+    cardP0 = playersDecks.get(listOfPlayers[0])[0]
+    cardP1 = playersDecks.get(listOfPlayers[1])[0]
+    endCards = False
+    counterCards = 0
+    while cardP0[2] == cardP1[2] and not endCards:
+        counterCards += 2
+        if playersDecks.get(listOfPlayers[1]).__len__() <= counterCards:
+            endCards = True
+            counterCards = playersDecks.get(listOfPlayers[1]).__len__() - 1
+            print(listOfPlayers[1], 'lost game, because he has not more card to war')
+            while counterCards >= 0:
+                print('\t>>', listOfPlayers[1], 'lost card:', playersDecks.get(listOfPlayers[1])[counterCards])
+                playersDecks.get(listOfPlayers[0]).append(playersDecks.get(listOfPlayers[1])[counterCards])
+                playersDecks.get(listOfPlayers[1]).remove(playersDecks.get(listOfPlayers[1])[counterCards])
+                counterCards -= 1
+            continue
+        elif playersDecks.get(listOfPlayers[0]).__len__() <= counterCards:
+            endCards = True
+            counterCards = playersDecks.get(listOfPlayers[0]).__len__() - 1
+            print(listOfPlayers[0], 'lost game, because he has not more card to war')
+            while counterCards >= 0:
+                print('\t>>', listOfPlayers[0], 'lost card:', playersDecks.get(listOfPlayers[0])[counterCards])
+                playersDecks.get(listOfPlayers[1]).append(playersDecks.get(listOfPlayers[0])[counterCards])
+                playersDecks.get(listOfPlayers[0]).remove(playersDecks.get(listOfPlayers[0])[counterCards])
+                counterCards -= 1
+            continue
 
+        cardP0 = playersDecks.get(listOfPlayers[0])[counterCards]
+        cardP1 = playersDecks.get(listOfPlayers[1])[counterCards]
+    else:
+        if endCards:
+            # break
+            continue
+        elif cardP0[2] > cardP1[2]:
+            while counterCards > 0:
+                print('\t>>', listOfPlayers[1], 'lost card:', playersDecks.get(listOfPlayers[1])[counterCards])
+                playersDecks.get(listOfPlayers[0]).append(playersDecks.get(listOfPlayers[1])[counterCards])
+                playersDecks.get(listOfPlayers[1]).remove(playersDecks.get(listOfPlayers[1])[counterCards])
+                playersDecks.get(listOfPlayers[0]).append(playersDecks.get(listOfPlayers[0])[counterCards])
+                playersDecks.get(listOfPlayers[0]).remove(playersDecks.get(listOfPlayers[0])[counterCards])
+                counterCards -= 1
+        else:
+            while counterCards > 0:
+                print('\t>>', listOfPlayers[0], 'lost card:', playersDecks.get(listOfPlayers[0])[counterCards])
+                playersDecks.get(listOfPlayers[1]).append(playersDecks.get(listOfPlayers[0])[counterCards])
+                playersDecks.get(listOfPlayers[0]).remove(playersDecks.get(listOfPlayers[0])[counterCards])
+                playersDecks.get(listOfPlayers[1]).append(playersDecks.get(listOfPlayers[1])[counterCards])
+                playersDecks.get(listOfPlayers[1]).remove(playersDecks.get(listOfPlayers[1])[counterCards])
+                counterCards -= 1
 
 else:
     print('\n\n\n\n\n/`/`/`__________________________________________________`\\`\\`\\')
