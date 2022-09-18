@@ -145,6 +145,7 @@ else:
     if playersDecks.get(listOfPlayers[0]).__len__() > playersDecks.get(listOfPlayers[1]).__len__():
         print(tab, listOfPlayers[0], 'won the game!')
         print(tab, listOfPlayers[0], 'has', playersDecks.get(listOfPlayers[0]).__len__(), 'cards in his deck')
+        print(tab,'Game finished in ', counterMoves, 'moves')
         print(tab, 'Congratulations', listOfPlayers[0], '!!!')
         print(tab, 'Thanks for game all players')
         print(tab, 'Deck of winner player:', '\n')
@@ -152,6 +153,7 @@ else:
     elif playersDecks.get(listOfPlayers[0]).__len__() < playersDecks.get(listOfPlayers[1]).__len__():
         print(tab, listOfPlayers[1], 'won the game!')
         print(tab, listOfPlayers[1], 'has', playersDecks.get(listOfPlayers[1]).__len__(), 'cards in his deck')
+        print(tab, 'Game finished in ', counterMoves, 'moves')
         print(tab, 'Congratulations', listOfPlayers[1], '!!!')
         print(tab, 'Thanks for game all players')
         print(tab, 'Deck of winner player:''\n')
@@ -159,6 +161,7 @@ else:
     else:
         print(tab, 'It\'s draw')
         print(tab, 'Congratulations', listOfPlayers[0], 'and', listOfPlayers[1], '!!!')
+        print(tab, 'Game finished in ', counterMoves, 'moves')
         print(tab, 'Deck of player:', listOfPlayers[0], '\n')
         print(playersDecks.get(listOfPlayers[0]))
         print(tab, 'Deck of player:', listOfPlayers[1], '\n')

@@ -1,3 +1,41 @@
+'''
+1. Korzystając z rozwiązania poprzedniego LAB-a napisz
+w zmiennej allCards zapisz pustą listę
+napisz zagnieżdżoną pętlę, która dla każdego koloru z listy colors i dla każdej figury z listy figures
+zapamięta w zmiennej aCard figurę (jest to słownik) - uwaga przepisując wartość skorzystaj z metody copy,
+która rzeczywiście tworzy kopię obiektu (  aCard = f.copy()  )
+
+do słownika aCard doda właściwość 'Color' o wartości w tej chwili przetwarzanego koloru
+obiekt aCard dodaj do listy allCards
+
+2. Zaimportuj moduł random i potasuj karty. Możesz je na tym etapie wyświetlić
+3. Utwórz puste listy player1 i player2 i wybraną przez siebie metodą daj im równą ilość kart z allCards
+4. Znowu możesz wyświetlić karty obu graczy
+
+5. Ponieważ gra w wojnę trwa tak długo, aż jeden z graczy zostanie bez kart,
+to napisz pętlę while, która będzie się wykonywać tak długo jak długo każdy z graczy ma karty
+
+6. Korzystając z metody pop():
+w zmiennej card1 zapisz kartę pobraną z listy player1
+w zmiennej card2 zapisz kartę pobraną z listy player2
+
+7. Porównaj właściwość 'Power' dla card1 i card2, następnie:
+jeżeli karty mają jednakową moc, zwróć je na koniec listy z kartami graczy:
+card1 wraca na koniec player1
+card2 wraca na koniec player2
+
+jeżeli card1 ma większą moc niż card2, to obie karty dopisz na końcu player1
+jeżeli card2 ma większą moc niż card1, to obie karty dopisz na końcy player2
+
+Podejmując wyżej opisaną decyzję wyświetl informację o kartach o tym kto wygrał.
+Możesz dodatkowo wyświetlać ilość kart u gracza 1 i 2 lub np. tyle gwiazdek ile kart ma gracz numer 1 - sam zdecyduj
+
+8. Za pętlą ustal kto ma karty i wyświetl informację o tym,  kto wygrał
+9. Uruchom skrypt i zobacz jak komputer się bawi. Z opcją pokój rozgrywki mogą nigdy się nie skończyć...
+więc w razie czego pamiętaj, że wykonanie skryptu możesz przerwać naciskając CTRL+C
+Jedno z uruchomień, które wreszcie się skończyło u mnie wyglądało tak:
+'''
+
 import random
 
 styles = ['Heart', 'Diamond', 'Club', 'Spade']
@@ -107,6 +145,7 @@ else:
     if playersDecks.get(listOfPlayers[0]).__len__() > playersDecks.get(listOfPlayers[1]).__len__():
         print(tab, listOfPlayers[0], 'won the game!')
         print(tab, listOfPlayers[0], 'has', playersDecks.get(listOfPlayers[0]).__len__(), 'cards in his deck')
+        print(tab,'Game finished in ', counterMoves, 'moves')
         print(tab, 'Congratulations', listOfPlayers[0], '!!!')
         print(tab, 'Thanks for game all players')
         print(tab, 'Deck of winner player:', '\n')
@@ -114,6 +153,7 @@ else:
     elif playersDecks.get(listOfPlayers[0]).__len__() < playersDecks.get(listOfPlayers[1]).__len__():
         print(tab, listOfPlayers[1], 'won the game!')
         print(tab, listOfPlayers[1], 'has', playersDecks.get(listOfPlayers[1]).__len__(), 'cards in his deck')
+        print(tab, 'Game finished in ', counterMoves, 'moves')
         print(tab, 'Congratulations', listOfPlayers[1], '!!!')
         print(tab, 'Thanks for game all players')
         print(tab, 'Deck of winner player:''\n')
@@ -121,6 +161,7 @@ else:
     else:
         print(tab, 'It\'s draw')
         print(tab, 'Congratulations', listOfPlayers[0], 'and', listOfPlayers[1], '!!!')
+        print(tab, 'Game finished in ', counterMoves, 'moves')
         print(tab, 'Deck of player:', listOfPlayers[0], '\n')
         print(playersDecks.get(listOfPlayers[0]))
         print(tab, 'Deck of player:', listOfPlayers[1], '\n')
