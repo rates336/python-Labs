@@ -111,7 +111,7 @@ counterMoves = 0
 # Make possibility play more than only 2 players
 print()
 while playersDecks.get(listOfPlayers[0]).__len__() > 0 and playersDecks.get(listOfPlayers[0]).__len__() > 0 and \
-        counterMoves < 10_000:
+        counterMoves < 100_000:
 
     counterMoves += 1
     print('\nConsole:\t', playersDecks.get(listOfPlayers[0])[0], '\t\tvs:\t\t', playersDecks.get(listOfPlayers[1])[0])

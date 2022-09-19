@@ -1,0 +1,57 @@
+from dataclasses import dataclass
+import random
+from typing import List, Dict
+
+SUITS: List[str] = ["Clubs", "Diamonds", "Hearts", "Spades"]
+CARDS: Dict[str, int] = {
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "Jack": 11,
+    "Queen": 12,
+    "King": 13,
+    "Ace": 14,
+}
+
+
+@dataclass
+class Card:
+    suit: str
+    figure: str
+    power: int
+
+    def __str__(self) -> str:
+        return f"{self.figure} of {self.suit}"
+
+    def __repr__(self) -> str:
+        return str(self)
+
+
+def create_deck(suits: List[str], cards: Dict[str, int]):
+    deck: List[Card] = list()
+
+    for suit in suits:
+        for card, power in cards.items():
+            deck.append(Card(suit, card, power))
+
+    return deck
+
+
+def shuffle_deck(deck: List[Card]):
+    shuffled_deck = deck
+    random.shuffle(shuffled_deck)
+    return shuffled_deck
+
+
+deck = create_deck(SUITS, CARDS)
+print(deck)
+
+print("Shuffled: ")
+shuffled_deck = shuffle_deck(deck)
+print(shuffled_deck)
