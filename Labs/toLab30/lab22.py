@@ -100,9 +100,9 @@ def print_animal(*animal):
         else:
             print('Can not print the animal please enter other animal')
             print('Your last choice is {:s}'.format(str(element)))
+            txt = ''
 
-    print(txt)
-    return
+        print(txt)
 
 
 # print_animal('bat')
@@ -118,6 +118,9 @@ print('/5')
 print_animal('badt', 'dadada', 'bear')
 print('/6')
 print_animal('')
+
+
+
 
 
 
