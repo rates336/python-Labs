@@ -26,7 +26,7 @@ print(id(x), id(y), x is y, sep='\t')
 
 days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 workdays = days.copy()
-workdays.remove(days[-1])
+workdays.remove(days[-2])
 workdays.remove(days[-1])
 print(days)
 print(workdays)
