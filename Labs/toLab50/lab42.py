@@ -13,7 +13,6 @@ Subject: {}
 {}
 '''.format(mail_from, mail_subject, mail_body)
 
-
     try:
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         server.ehlo()

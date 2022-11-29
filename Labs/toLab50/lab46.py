@@ -14,8 +14,6 @@ print(list(map(lambda cake: '{} cake with {} glaze with text "{}" of {} kg'.form
     cake.get('taste'), cake.get('glaze'), cake.get('text'), cake.get('weight')), cakes_list)))
 
 
-
-
 def fill_bakery_offer():
     Cake.bakery_offer.append(Cake('Happy cake', 'sponge', 'chocolate', ['icing-sugar', 'm&m', 'kitkat'],
                                   'cherry', 'Happy Day :)', 'L'))
@@ -36,8 +34,8 @@ class Cake:
     known_types = ['cake', 'muffin', 'pudding', 'meringue', 'cheese_cake', 'biscuit', 'waffle',
                    'eclair', 'christmas_cake', 'pretzel', 'sponge', 'jelly', 'other']
     bakery_offer = []
-
     __gluten_free = False
+    __text = ''
 
     def __init__(self, name: str, kind: str, carry_taste: str, additions: list, filling: str,
                  text: str, size: str, __gluten_free=False):
@@ -49,7 +47,7 @@ class Cake:
         self.carry_taste = carry_taste
         self.additions = additions
         self.filling = filling
-        self.text = text
+        self.__text = text
         self.size = size
         Cake.bakery_offer.append(self)
         self.__gluten_free = __gluten_free
@@ -73,6 +71,15 @@ class Cake:
     def add_additives(self, list_additions: list):
         for x in list_additions:
             self.additions.append(x)
+
+    def get_text(self):
+        return self.__text
+
+    def set_text(self, new_text):
+        if self.additions.count('frosting') > 0:
+            self.__text = new_text
+        else:
+            print('Text can be only applied on type of glade: {}'.format('frosting'))
 
 
 print('Today we offers:')
@@ -109,3 +116,4 @@ print(vars(cake_03))
 cake_03._Cake__gluten_free = False
 print(vars(cake_03))
 cake_03.__gluten_free = True
+print(list(map(lambda cake: cake.name + '\nIt\'s a ' + (cake.kind + r'\\'), Cake.bakery_offer)))
