@@ -84,7 +84,10 @@ for c in Cake.bakery_offer:
     c.show_info()
 
 cake04.show_info()
-cake04.additives(['kakao', 'apple jam'])
+# cake04.additives(['kakao', 'apple jam'])
+# cake04.additives.extend(['kakao', 'apple jam'])
+# cake04.additives.append('kakao')
+# cake04.additives.append('apple jam')
 cake04.show_info()
 
 
