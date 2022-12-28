@@ -1,3 +1,4 @@
+import inspect
 import os.path
 import pickle
 import glob
@@ -33,8 +34,8 @@ def export_cake_to_html(obj, path):
         f.write(content)
 
     def export_all():
-        for x in obj.bakery_offer:
-            content = template.format(x.name, x.kind, x.carry_taste, x.additions, x.filling)
+        for z in obj.bakery_offer:
+            content = template.format(z.name, z.kind, z.carry_taste, z.additions, z.filling)
             f.write(content)
 
     with open(path, 'w') as f:
@@ -45,10 +46,10 @@ def export_cake_to_html(obj, path):
         # else:
         #     print('Wrong type_of_export')
         print(type(obj).__name__) # To understand in future !!!
-        if isinstance(obj, Cake):
-            export_one()
-        elif issubclass(obj, obj):
+        if inspect.isclass(obj):
             export_all()
+        elif isinstance(obj, Cake):
+            export_one()
         f.close()
 
 
