@@ -24,7 +24,7 @@ class Cake:
         print('-'*20)
 
     def add_additives(self, additives):
-        self.additives.extend(additives)
+        self.additives.append(additives)
 
 
 cake01 = Cake('Vanilla Cake', 'cake', 'vanilla', ['chocolade', 'nuts'], 'cream')
@@ -57,4 +57,5 @@ def add_extra_additives(cake, additives):
 
 print(cake01.additives)
 add_extra_additives(cake01, ['chocolate', 'nuts', 'strawberry'])
+# add_extra_additives(cake01, 'strawberry')
 print(cake01.additives)
