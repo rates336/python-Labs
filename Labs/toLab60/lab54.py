@@ -32,5 +32,5 @@ else:
 finally:
     if os.path.isfile(tmp_file_path):
         os.remove(tmp_file_path)
-    print('Temp file deleted')
+    print('Temp was file deleted')
 
