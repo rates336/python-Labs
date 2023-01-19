@@ -24,6 +24,15 @@ try:
 
     save_url_to_file(url, tmp_file_path)
     file_path = tmp_file_path
+except requests.exceptions.ConnectionError:
+    print('Adres URL is wrong, please check it')
+    print('URL= {}'.format(url))
+except PermissionError:
+    print('Permission to file is not enough')
+    print('Please correct it and Run again')
+except FileNotFoundError as e:
+    e.with_traceback()
+
 except Exception as e:
     print('Something went bad, try again or fix it:')
     e.with_traceback()
