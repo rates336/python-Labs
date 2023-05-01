@@ -5,34 +5,14 @@ class Combinations:
         self.promotions = promotions
         self.customers = customers
 
-        self.current_product = 0
-        self.current_promotion = 0
-        self.current_customer = 0
+    def __getitem__(self, item):
 
-    def __next__(self):
-
-        if self.current_customer >= len(self.customers):
-            self.current_customer = 0
-            self.current_promotion += 1
-
-        if self.current_promotion >= len(self.promotions):
-            self.current_promotion = 0
-            self.current_product += 1
-
-        if self.current_product >= len(self.products):
-            self.current_product =0
+        if item <= len(products) * len(promotions) * len(customers):
+            return "{}, {}, {}".format(products[item % (len(products) * len(promotions))],
+                                       promotions[item // len(products) % len(promotions)],
+                                       customers[item // len(products) // len(promotions)])
+        else:
             raise StopIteration()
-
-        item_to_return = "{} - {} -{}".format(self.products[self.current_product],
-                                              self.promotions[self.current_promotion],
-                                              self.customers[self.current_customer])
-
-        self.current_customer += 1
-
-        return  item_to_return
-
-    def __iter__(self):
-        return  self
 
 
 products = ["Product {}".format(i) for i in range(1, 4)]
@@ -41,10 +21,15 @@ customers = ['Customer {}'.format(i) for i in range(1, 6)]
 
 combinations = Combinations(products, promotions, customers)
 
+itr = iter(combinations)
 
+print(next(itr))
+print(next(itr))
+print(next(itr))
+# print(next(iter(next(itr))))
 
-
-
+for x in combinations:
+    print(x)
 
 
 
