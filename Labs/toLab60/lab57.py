@@ -1,3 +1,5 @@
+# Class algorythm to refactor to create result how to course
+
 class Combinations:
 
     def __init__(self, products, promotions, customers):
@@ -5,12 +7,16 @@ class Combinations:
         self.promotions = promotions
         self.customers = customers
 
+        self.current_product = 0
+        self.current_promotion = 0
+        self.current_customer = 0
+        self.counter = 0
+
     def __getitem__(self, item):
 
         if item <= len(products) * len(promotions) * len(customers):
-            return "{}, {}, {}".format(products[item % (len(products) * len(promotions))],
-                                       promotions[item // len(products) % len(promotions)],
-                                       customers[item // len(products) // len(promotions)])
+            ret = "{}, {}, {}".format(products[self.counter])
+
         else:
             raise StopIteration()
 
@@ -30,9 +36,6 @@ print(next(itr))
 
 for x in combinations:
     print(x)
-
-
-
 
 
 
